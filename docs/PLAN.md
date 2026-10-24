@@ -1,6 +1,6 @@
 # B站之手 · 规划
 
-> 状态：P1/P2 已完成并真机验证（点赞/投币/收藏/评论），P3 发布准备中
+> 状态：P1/P2 已完成并真机验证（点赞/投币/收藏/评论）；P3 已发布 GitHub，回归继续
 > 插件标识：`astrbot_plugin_bilibili_hand`
 > 上游依赖：`astrbot_plugin_bilibili_eyes`
 
@@ -331,7 +331,7 @@ def delete_comment(aid, rpid) -> dict   # 后续可选，当前未实现
 
 ### 10.5 开源与发布
 
-- 建立 `AcceleratorYue/astrbot_plugin_bilibili_hand` GitHub 仓库；
+- [x] 建立 `AcceleratorYue/astrbot_plugin_bilibili_hand` GitHub 仓库；
 - README 明确：
   - **必须先安装并启用 B站之眼**；
   - 账号 Cookie 配置与风险；
@@ -343,13 +343,14 @@ def delete_comment(aid, rpid) -> dict   # 后续可选，当前未实现
 
 ### 10.6 发布前必须通过
 
-- [ ] 投币 1 次真实回归；
+- [x] 投币 1 次真实回归；
 - [ ] 重复动作/每日上限；
+- [x] 点赞/投币/收藏/评论真实动作均已各验证一次；
 - [ ] 非授权用户拒绝；
 - [ ] 目标过期/切换；
 - [ ] debounce / quiet_hours 共存；
-- [ ] README 安装依赖说明；
-- [ ] GitHub Release 可下载；
+- [x] README 安装依赖说明；
+- [x] GitHub Release 可下载（v0.4.0）；
 - [ ] 真实账号连续使用 1~2 天无异常。
 
 ## 11. 已知坑
