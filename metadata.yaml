@@ -1,0 +1,21 @@
+name: astrbot_plugin_bilibili_hand
+display_name: B站之手
+short_desc: 对 B站之眼刚看过的视频执行点赞/投币/收藏/评论
+desc: >-
+  B站之眼的下游插件。只操作当前会话里 B站之眼上一次刚看过的视频：
+  点赞由 bot 自主决定；投币、收藏由指令触发；评论由指令或自然语言触发，
+  内容由 bot 自己生成。默认仅管理员和白名单可用，开始/结果都有反馈。
+version: 0.4.0
+author: AcceleratorYue
+repo: https://github.com/AcceleratorYue/astrbot_plugin_bilibili_hand
+social_link: https://github.com/AcceleratorYue
+astrbot_version: ">=4.16,<5"
+support_platforms:
+  - aiocqhttp
+tags:
+  - bilibili
+  - 视频互动
+  - 点赞
+  - 投币
+  - 评论
+  - 下游插件

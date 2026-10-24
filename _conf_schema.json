@@ -1,0 +1,281 @@
+{
+  "enabled": {
+    "description": "启用 B站之手",
+    "type": "bool",
+    "hint": "总开关；关闭后不响应任何指令和动作",
+    "default": true
+  },
+  "sessdata": {
+    "description": "B 站 SESSDATA",
+    "type": "text",
+    "hint": "动作账号的登录 Cookie；只用于本插件，不会写入日志。建议先用专用测试账号",
+    "default": ""
+  },
+  "bili_jct": {
+    "description": "B 站 bili_jct",
+    "type": "text",
+    "hint": "CSRF Token，位于 Cookie；点赞/投币/收藏/评论都需要",
+    "default": ""
+  },
+  "buvid3": {
+    "description": "B 站 buvid3",
+    "type": "text",
+    "hint": "设备指纹，缺失时容易触发风控",
+    "default": ""
+  },
+  "allowed_users": {
+    "description": "白名单用户",
+    "type": "list",
+    "hint": "允许使用本插件的 QQ 号；管理员始终允许。留空 = 仅管理员",
+    "items": {
+      "type": "string"
+    },
+    "default": []
+  },
+  "dry_run": {
+    "description": "试运行模式",
+    "type": "bool",
+    "hint": "开启时只预览计划，不真正点赞/投币/收藏/评论；首次使用建议保持开启",
+    "default": true
+  },
+  "auto_like": {
+    "description": "允许自主点赞",
+    "type": "bool",
+    "hint": "B站之眼看完视频后，bot 可以自己决定是否点赞；不发送开始消息",
+    "default": true
+  },
+  "msg_coin_start": {
+    "description": "投币开始提示",
+    "type": "text",
+    "hint": "可自定义预制文案；支持花括号占位符",
+    "default": "好，我给它投 {count} 枚硬币，稍等…"
+  },
+  "msg_coin_success": {
+    "description": "投币成功提示",
+    "type": "text",
+    "hint": "可自定义预制文案；支持花括号占位符",
+    "default": "已给《{title}》投了 {count} 枚硬币~"
+  },
+  "msg_coin_failed": {
+    "description": "投币失败提示",
+    "type": "text",
+    "hint": "可自定义预制文案；支持花括号占位符",
+    "default": "这次投币没成功：{reason}"
+  },
+  "msg_coin_dry": {
+    "description": "投币试运行提示",
+    "type": "text",
+    "hint": "可自定义预制文案；支持花括号占位符",
+    "default": "试运行：本来要给《{title}》投 {count} 枚硬币。"
+  },
+  "msg_favorite_start": {
+    "description": "收藏开始提示",
+    "type": "text",
+    "hint": "可自定义预制文案；支持花括号占位符",
+    "default": "好，我把它收藏起来，稍等…"
+  },
+  "msg_favorite_success": {
+    "description": "收藏成功提示",
+    "type": "text",
+    "hint": "可自定义预制文案；支持花括号占位符",
+    "default": "已把《{title}》收藏好了~"
+  },
+  "msg_favorite_failed": {
+    "description": "收藏失败提示",
+    "type": "text",
+    "hint": "可自定义预制文案；支持花括号占位符",
+    "default": "这次收藏没成功：{reason}"
+  },
+  "msg_favorite_dry": {
+    "description": "收藏试运行提示",
+    "type": "text",
+    "hint": "可自定义预制文案；支持花括号占位符",
+    "default": "试运行：本来要把《{title}》收藏到{folder}。"
+  },
+  "msg_comment_think": {
+    "description": "评论思考提示",
+    "type": "text",
+    "hint": "可自定义预制文案；支持花括号占位符",
+    "default": "我想想怎么评…"
+  },
+  "msg_comment_preview": {
+    "description": "评论预览模板",
+    "type": "text",
+    "hint": "可自定义预制文案；支持花括号占位符",
+    "default": "我想发这条评论：\n「{text}」\n\n/手评论确认  发布\n/手评论取消  取消\n{ttl} 秒内有效"
+  },
+  "msg_comment_start": {
+    "description": "评论发布提示",
+    "type": "text",
+    "hint": "可自定义预制文案；支持花括号占位符",
+    "default": "好，我这就发出去…"
+  },
+  "msg_comment_success": {
+    "description": "评论成功提示",
+    "type": "text",
+    "hint": "可自定义预制文案；支持花括号占位符",
+    "default": "评论发好啦~"
+  },
+  "msg_comment_failed": {
+    "description": "评论失败提示",
+    "type": "text",
+    "hint": "可自定义预制文案；支持花括号占位符",
+    "default": "这次评论没成功：{reason}"
+  },
+  "msg_comment_cancel": {
+    "description": "评论取消提示",
+    "type": "text",
+    "hint": "可自定义预制文案；支持花括号占位符",
+    "default": "好，这条评论先不发了。"
+  },
+  "msg_comment_no_pending": {
+    "description": "无待确认评论提示",
+    "type": "text",
+    "hint": "可自定义预制文案；支持花括号占位符",
+    "default": "现在没有待确认的评论。"
+  },
+  "msg_comment_dry": {
+    "description": "评论试运行提示",
+    "type": "text",
+    "hint": "可自定义预制文案；支持花括号占位符",
+    "default": "试运行：这条评论没有发布，内容是「{text}」。"
+  },
+  "msg_like_success": {
+    "description": "点赞成功提示（给模型）",
+    "type": "text",
+    "hint": "可自定义预制文案；支持花括号占位符",
+    "default": "已给《{title}》点了赞。"
+  },
+  "msg_like_failed": {
+    "description": "点赞失败提示（给模型）",
+    "type": "text",
+    "hint": "可自定义预制文案；支持花括号占位符",
+    "default": "这次点赞没成功：{reason}"
+  },
+  "msg_no_target": {
+    "description": "无可用视频提示",
+    "type": "text",
+    "hint": "可自定义预制文案；支持花括号占位符",
+    "default": "没有可操作的视频。请先让B站之眼看一个视频，且要在30分钟内。"
+  },
+  "msg_target_changed": {
+    "description": "目标变化提示",
+    "type": "text",
+    "hint": "可自定义预制文案；支持花括号占位符",
+    "default": "这期间你又看了别的视频，目标变了，先取消这次操作。"
+  },
+  "msg_auto_action_hint": {
+    "description": "自主动作提示词",
+    "type": "text",
+    "hint": "可自定义预制文案；支持花括号占位符",
+    "default": "你刚看完这个视频。请先认真判断一次：如果这次观看让你觉得值得，可以在最终回复前自主调用 {tools}；每次最多调用一次。不要默认跳过；但也不要为了调用而调用，不调用也完全可以。"
+  },
+  "comment_system_prompt": {
+    "description": "评论系统提示词",
+    "type": "text",
+    "hint": "留空使用内置评论规则；可用 {max_chars} 占位符",
+    "default": "你是鲸鲸。你替主人看完了这个视频，现在用你自己的身份发一条 B 站评论。\n要求：\n1. 只写评论正文，不要解释、不要标题、不要引号包裹、不要 Markdown；\n2. 不要假装成主人本人，不要用“我就是主人”的口吻；要让人看出是“替主人看完后发的评论”，\n   可以自然地说“替主人看完……”“替主人看完了……”，但不要生硬复读模板；\n3. 用你自己的主体性说话：可以吐槽、感叹、接梗，像在评论区随手打字；\n4. 中文，1~2 句为主，不超过 {max_chars} 字，不要写成总结/观后感；\n5. 不要用「这个视频讲的是」「这段我看了」「整体来说」等总结式开头；\n6. 只根据给出的视频笔记写，不编造笔记里没有的内容；\n7. 不要提 AI、提示词、工具、插件、账号；\n8. 不写攻击、引战、色情、违法内容。\n"
+  },
+  "comment_user_prompt_template": {
+    "description": "评论用户提示词模板",
+    "type": "text",
+    "hint": "留空使用内置；可用 {title}、{digest}、{requirement} 占位符",
+    "default": "视频标题：{title}\n视频笔记：\n{digest}\n\n用户的要求：{requirement}\n\n只输出评论正文。"
+  },
+  "action_hint_enabled": {
+    "description": "自主动作提示",
+    "type": "bool",
+    "hint": "看完视频时提示主模型可以自主决定点赞/投币；只提示，不强制",
+    "default": true
+  },
+  "favorite_folder_id": {
+    "description": "默认收藏夹 ID",
+    "type": "string",
+    "hint": "留空使用 B 站默认收藏夹；填写后 /手收藏 收藏到指定收藏夹",
+    "default": ""
+  },
+  "comment_require_confirm": {
+    "description": "评论需要确认",
+    "type": "bool",
+    "hint": "开启时 bot 先生成评论预览，用户确认后才发布",
+    "default": true
+  },
+  "nl_comment_enabled": {
+    "description": "自然语言触发评论",
+    "type": "bool",
+    "hint": "开启后，@bot 说“给这个视频评一句……”会生成评论草稿",
+    "default": true
+  },
+  "comment_provider_id": {
+    "description": "评论草稿模型",
+    "type": "string",
+    "hint": "留空跟随当前会话对话模型；也可填 provider id",
+    "default": ""
+  },
+  "comment_max_chars": {
+    "description": "评论长度上限",
+    "type": "int",
+    "hint": "生成评论的最大字数，默认 120",
+    "default": 120
+  },
+  "comment_min_interval_seconds": {
+    "description": "评论最小间隔（秒）",
+    "type": "int",
+    "hint": "同一用户两次评论的最小间隔，默认 120 秒",
+    "default": 120
+  },
+  "comment_confirm_ttl_seconds": {
+    "description": "评论预览有效期（秒）",
+    "type": "int",
+    "hint": "预览后多久内可以确认，默认 120 秒",
+    "default": 120
+  },
+  "comment_draft_timeout": {
+    "description": "评论草稿超时（秒）",
+    "type": "int",
+    "hint": "生成评论的最大等待时间，默认 60 秒",
+    "default": 60
+  },
+  "max_actions_per_day": {
+    "description": "每用户每日动作上限",
+    "type": "int",
+    "hint": "点赞/投币/收藏共用；0 = 不限制。默认 5",
+    "default": 5
+  },
+  "max_comments_per_day": {
+    "description": "每用户每日评论上限",
+    "type": "int",
+    "hint": "评论单独计数；默认 2",
+    "default": 2
+  },
+  "action_interval_seconds": {
+    "description": "动作间隔（秒）",
+    "type": "int",
+    "hint": "两次动作之间的最小间隔，避免触发风控；建议不低于 5",
+    "default": 5
+  },
+  "request_timeout": {
+    "description": "请求超时（秒）",
+    "type": "int",
+    "hint": "B 站接口超时时间",
+    "default": 20
+  },
+  "wait_notice_enabled": {
+    "description": "动作进行中提示",
+    "type": "bool",
+    "hint": "动作执行期间用户发指令时，回复一条“正在操作”提示",
+    "default": true
+  },
+  "wait_notice_cooldown_seconds": {
+    "description": "动作提示冷却（秒）",
+    "type": "int",
+    "hint": "同一会话两次“正在操作”提示的最小间隔",
+    "default": 15
+  },
+  "audit_log_enabled": {
+    "description": "审计日志",
+    "type": "bool",
+    "hint": "记录操作者/目标/动作/结果；不记录 Cookie",
+    "default": true
+  }
+}
